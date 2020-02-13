@@ -1,0 +1,9 @@
+refine short_host_name_to_fqdn : EVENT($EV) where [NOT $EV.mc_host equals "" AND NOT $EV.mc_host contains "."]
+{
+                ntadd($EV, "Short hostname found. Trying to query DNS in order to determine FQDN");
+                get_external(mg_resolve_fqdn,[$EV.mc_host],FQDN_RESOLVER,$RSLV);
+                ntadd($EV, "Trying to resolve FQDN from mc_host " || $EV.mc_host || "... Lookup result:" || $RSLV.fqdn);
+                $EV.mc_host = $RSLV.fqdn;
+                
+}
+END

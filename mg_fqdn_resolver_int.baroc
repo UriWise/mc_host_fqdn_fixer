@@ -1,0 +1,5 @@
+MC_INTERFACE: FQDN_RESOLVER
+                DEFINES {
+                                fqdn                                      : STRING;
+                                };
+END

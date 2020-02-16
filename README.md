@@ -1,1 +1,1 @@
-This solution verifies the host name in the mc_host slot, if the host name is a short name (no domain) then it fires DNS query in order to determine the Fully Qualified Domain Name (FQDN). If the query returns FQDN, the value of the mc_ost slot will be replaced by it.
+This solution verifies the host name in the mc_host slot, if the host name is a short name (no domain) then it fires DNS query in order to determine the Fully Qualified Domain Name (FQDN). If the query returns FQDN, the value of the mc_host slot will be replaced.
